@@ -8,8 +8,8 @@
 
     // configuration =================
 
-    mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
-
+    //mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
+    mongoose.connect('mongodb://lotususer:<PASSWORD>@cluster0-shard-00-00-al8ys.mongodb.net:27017,cluster0-shard-00-01-al8ys.mongodb.net:27017,cluster0-shard-00-02-al8ys.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
